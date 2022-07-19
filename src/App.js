@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Login from "./components/Login.js";
+import React from "react";
+import AppBar from "@mui/material/AppBar";
+import {
+  Routes,
+  Route,
+  Router,
+  Link,
+  Navigate,
+  useParams,
+  useNavigate,
+} from "react-router-dom";
+import { Button } from "@mui/material";
+import Toolbar from "@mui/material/Toolbar";
+import Dashboard from "./components/Dashboard";
+import AddUser from "./components/AddUser";
+import Nav from "./components/Nav";
+import WithNav from "./components/WithNav";
+import WithoutNav from "./components/WithoutNav";
 function App() {
+  const navigate = useNavigate();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route element={<WithoutNav />}>
+          <Route path="/" element={<Login />} />
+        </Route>
+        <Route element={<WithoutNav />}>
+          <Route path="/login" element={<Login />} />
+        </Route>
+        <Route element={<WithNav />}>
+          <Route exact path="/AddUser" element={<AddUser />} />
+        </Route>
+        <Route element={<WithNav />}>
+          <Route path="/Dashboard" element={<Dashboard />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

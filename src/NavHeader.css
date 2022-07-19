@@ -1,0 +1,25 @@
+.custom-centered {
+  margin: 0 auto;
+  width: 100%;
+}
+h1 {
+  color: #d02;
+}
+
+.container {
+  padding: 15px !important;
+  padding-bottom: 0px !important;
+  height: 100%;
+}
+
+.navbar {
+  background-color: #1b4d89;
+}
+* {
+  box-sizing: border-box;
+}
+.brand-name {
+  font-size: 1.5em;
+  margin-left: 1rem;
+  color: #f9e45b;
+}
